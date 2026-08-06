@@ -1,26 +1,157 @@
+@layer theme, base, tokens, recipes, utilities;
+
 @import "tailwindcss";
+@import "../styles/buttons.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "IvyMode", serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "DM Sans", sans-serif;
+  background: #FEFFFB;
+}
+
+@layer base {
+
+  /* Hero / Page Title */
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl leading-tight tracking-tight;
+  }
+
+  /* Section Heading */
+  h2 {
+    @apply text-3xl md:text-4xl leading-snug;
+  }
+
+  /* Card Heading */
+  h3 {
+    @apply text-2xl md:text-3xl leading-snug;
+  }
+
+  /* Small Heading */
+  h4 {
+    @apply text-xl md:text-2xl leading-snug;
+  }
+
+  /* Paragraph */
+  p {
+    @apply text-sm md:text-base leading-relaxed;
+  }
+}
+
+/* ── Chakra UI DatePicker Styles ────────────────────────────────────────── */
+[data-part="content"][data-scope="date-picker"] {
+  padding: 16px !important;
+  background: #ffffff !important;
+  border-radius: 16px !important;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.12), 0 4px 12px -2px rgba(0, 0, 0, 0.06) !important;
+  border: 1px solid #e4e4e7 !important;
+  z-index: 1000 !important;
+}
+
+[data-part="table-cell-trigger"][data-scope="date-picker"] {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 10px !important;
+  font-size: 0.875rem !important;
+  font-weight: 500 !important;
+  color: #1a1a1a !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease-in-out !important;
+  background: transparent;
+  user-select: none !important;
+}
+
+[data-part="table-cell-trigger"][data-scope="date-picker"]:hover:not([aria-disabled="true"]):not([data-disabled]) {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+
+[data-part="table-cell-trigger"][data-scope="date-picker"][data-selected] {
+  background-color: #4A5D23 !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}
+
+[data-part="table-cell-trigger"][data-scope="date-picker"][data-selected]:hover {
+  background-color: #3b4d1b !important;
+}
+
+[data-part="table-cell-trigger"][data-scope="date-picker"][data-in-range] {
+  background-color: #f1f7ea !important;
+  color: #4A5D23 !important;
+  border-radius: 0 !important;
+}
+
+[data-part="table-cell-trigger"][data-scope="date-picker"][data-range-start] {
+  background-color: #4A5D23 !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  border-top-left-radius: 10px !important;
+  border-bottom-left-radius: 10px !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+[data-part="table-cell-trigger"][data-scope="date-picker"][data-range-end] {
+  background-color: #4A5D23 !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  border-top-right-radius: 10px !important;
+  border-bottom-right-radius: 10px !important;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+
+[data-part="table-cell-trigger"][data-scope="date-picker"][data-today]:not([data-selected]) {
+  border: 1.5px solid #4A5D23 !important;
+  font-weight: 700 !important;
+  color: #4A5D23 !important;
+}
+
+[data-part="table-cell-trigger"][data-scope="date-picker"][aria-disabled="true"],
+[data-part="table-cell-trigger"][data-scope="date-picker"][data-disabled] {
+  opacity: 0.3 !important;
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+}
+
+[data-part="prev-trigger"][data-scope="date-picker"],
+[data-part="next-trigger"][data-scope="date-picker"],
+[data-part="view-trigger"][data-scope="date-picker"] {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 4px 8px !important;
+  border-radius: 8px !important;
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  color: #334155 !important;
+  cursor: pointer !important;
+  transition: background-color 0.15s ease-in-out !important;
+  background: transparent;
+}
+
+[data-part="prev-trigger"][data-scope="date-picker"]:hover,
+[data-part="next-trigger"][data-scope="date-picker"]:hover,
+[data-part="view-trigger"][data-scope="date-picker"]:hover {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+
+[data-part="table-header"][data-scope="date-picker"] {
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  color: #64748b !important;
+  padding: 6px 0 !important;
+  text-align: center !important;
 }

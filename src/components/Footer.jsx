@@ -1,0 +1,170 @@
+import Link from "next/link";
+import Image from "next/image";
+import navLinks from "@/data/navLinksData";
+import address from "@/data/addressData";
+import contacts from "@/data/contactsData";
+import mail from "@/data/mailIdData";
+import socialmedia from "@/data/socialmediaData";
+
+const half = Math.ceil(navLinks.length / 2);
+const quickLinksCol1 = navLinks.slice(0, half);
+const quickLinksCol2 = navLinks.slice(half);
+
+export default function Footer() {
+    return (
+        <footer className="bg-[#2d2d2d] z-49  text-white index">
+
+            {/* Main footer body */}
+            <div className="max-w-7xl mx-auto px-6 py-10">
+                <div className="grid grid-cols-1 md:grid-cols-4  xl:grid-cols-5 gap-12 xl:gap-12 items-center">
+
+                    {/* Col 1 — Logo */}
+                    <div className="flex h-full md:col-span-4 xl:col-span-1 items-center justify-center">
+                        <Image
+                            src="/logos/1000 acre logo black.svg"
+                            alt="Boche 1000 Acre Logo"
+                            title="boCHE 1000 Acre Logo"
+                            width={140}
+                            height={28}
+                            className="h-7 w-auto"
+                            style={{ width: "auto" }}
+                        />
+                    </div>
+
+                    {/* Col 2 — Quick Links */}
+                    <div className="col-span-1 md:col-span-2">
+                        <p className="text-sm font-semibold tracking-widest uppercase text-white mb-6">
+                            Quick Links
+                        </p>
+                        <div className="grid grid-cols-2 gap-x-8 gap-y-4">
+                            <ul className="flex flex-col gap-4">
+                                {quickLinksCol1.map((link) => (
+                                    <li key={link.path}>
+                                        <Link
+                                            href={link.path}
+                                            className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+                                        >
+                                            {link.name}
+                                        </Link>
+                                    </li>
+                                ))}
+                                <li>
+                                    <Link
+                                        href="/blog"
+                                        className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+                                    >
+                                        Blog
+                                    </Link>
+                                </li>
+                            </ul>
+                            <ul className="flex flex-col gap-4">
+                                {quickLinksCol2.map((link) => (
+                                    <li key={link.path}>
+                                        <Link
+                                            href={link.path}
+                                            className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
+                                        >
+                                            {link.name}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+
+                    {/* Col 3 — Contact Info */}
+                    <div className="flex flex-col gap-4">
+
+                        {/* Email */}
+                        {mail.length > 0 && (
+                            <a
+                                href={`mailto:${mail[mail.length - 1].mailId}`}
+                                className="text-gray-300 hover:text-white text-sm transition-colors duration-200"
+                            >
+                                Mail us: {mail[mail.length - 1].mailId}
+                            </a>
+                        )}
+
+                        {/* Address */}
+                        <address className="text-gray-400 text-sm leading-relaxed">
+                            <p className="text-gray-300 font-medium mb-1">Address:</p>
+                            {address.line1},<br />
+                            {address.line2},<br />
+                            {address.city}, {address.state} {address.pin}
+                        </address>
+
+                        {/* Phone */}
+                        {contacts.slice(0, 1).map((c) => (
+                            <a
+                                key={c.name}
+                                href={`tel:+91${c.phone}`}
+                                className="text-gray-300 hover:text-white text-sm transition-colors duration-200"
+                            >
+                                +91 {c.phone}
+                            </a>
+                        ))}
+
+                    </div>
+
+                    {/* Col 4 — Badge Logo */}
+                    <div className="flex shrink-0 items-center justify-center">
+                        <Image
+                            src="/logos/group-logo.webp"
+                            alt="Boche Badge"
+                            title="boCHE Group Badge"
+                            width={144}
+                            height={144}
+                            className="max-w-36  object-contain"
+                            style={{ width: "auto", height: "auto" }}
+                        />
+                    </div>
+                </div>
+            </div>
+
+            {/* Bottom bar */}
+            <div className="border-t border-white/10">
+                <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+
+                    {/* Copyright + legal */}
+                    <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6 text-gray-500 text-xs text-center sm:text-left">
+                        <span>
+                            Copyright © {new Date().getFullYear()} Boche 1000 Acre. All Rights Reserved
+                        </span>
+
+                        <div className="flex gap-4">
+                            <Link
+                                href="/terms"
+                                className="hover:text-white transition-colors duration-200"
+                            >
+                                Terms and Conditions
+                            </Link>
+
+                            <Link
+                                href="/privacy"
+                                className="hover:text-white transition-colors duration-200"
+                            >
+                                Privacy and Policy
+                            </Link>
+                        </div>
+                    </div>
+                    {/* Social icons */}
+                    <div className="flex items-center gap-3">
+                        {socialmedia.map((s) => (
+                            <a
+                                key={s.platform}
+                                href={s.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label={s.platform}
+                                className="w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/10 transition-all duration-200"
+                            >
+                                <s.icon className="w-5 h-5 text-white opacity-80 group-hover:opacity-100 transition-opacity duration-200" />
+                            </a>
+                        ))}
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+    );
+}

@@ -1,0 +1,246 @@
+'use client';
+
+import { useEffect, useRef, useState } from 'react';
+import { useParams, useRouter } from 'next/navigation';
+import PhotoSwipeLightbox from 'photoswipe/lightbox';
+import 'photoswipe/style.css';
+import { categories } from '../../../data/gallery';
+import { getImagesByCategory } from '../../../services/galleryService';
+
+/* Map category ids to display labels for the tab bar */
+const DISPLAY_LABELS = {
+    all: 'Recent',
+    adventures: 'Adventure',
+    stays: 'Stays',
+    'toddy-pub': 'Toddy Pub',
+    events: 'Events',
+    estate: 'Estate',
+};
+
+const ITEMS_PER_PAGE = 50;
+
+export default function Gallery() {
+    const { category } = useParams(); // array (catch-all) or undefined
+    const router = useRouter();
+    const galleryRef = useRef(null);
+    const [page, setPage] = useState(1);
+    const [blursReady, setBlursReady] = useState(false);
+
+    const activeCategory = category?.[0] || 'all';
+
+    const filteredImages = getImagesByCategory(activeCategory)
+        .sort((a, b) => b.id - a.id);
+
+    const totalCount = filteredImages.length;
+    const totalPages = Math.ceil(totalCount / ITEMS_PER_PAGE);
+    const pagedImages = filteredImages.slice(
+        (page - 1) * ITEMS_PER_PAGE,
+        page * ITEMS_PER_PAGE,
+    );
+
+    /* Set page title/meta description */
+    useEffect(() => {
+        document.title = "Gallery | boCHE 1000 Acres Resort in Wayanad Kerala";
+
+        let metaDescription = document.querySelector('meta[name="description"]');
+        if (!metaDescription) {
+            metaDescription = document.createElement('meta');
+            metaDescription.name = 'description';
+            document.head.appendChild(metaDescription);
+        }
+        metaDescription.content =
+            "Browse the gallery of boCHE 1000 Acres — one of the best resorts in Wayanad Kerala. Photos of unique stays, adventure activities, tea plantation estate, events, and authentic Kerala cuisine at our Wayanad resort.";
+    }, []);
+
+    /* Reset to page 1 when category changes */
+    useEffect(() => {
+        setPage(1);
+    }, [activeCategory]);
+
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, [page]);
+
+    /* Preload all blur images before revealing the grid */
+    useEffect(() => {
+        setBlursReady(false);
+        if (pagedImages.length === 0) { setBlursReady(true); return; }
+
+        let loaded = 0;
+        pagedImages.forEach((item) => {
+            const img = new Image();
+            img.onload = img.onerror = () => {
+                loaded += 1;
+                if (loaded === pagedImages.length) setBlursReady(true);
+            };
+            img.src = item.variants.blur;
+        });
+    }, [activeCategory, page]);
+
+    /* Initialise / reinitialise PhotoSwipe whenever the visible set changes */
+    useEffect(() => {
+        if (!galleryRef.current) return;
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallery: galleryRef.current,
+            children: 'a[data-pswp-src]',
+            pswpModule: () => import('photoswipe'),
+        });
+
+        lightbox.init();
+        return () => lightbox.destroy();
+    }, [activeCategory, page, blursReady]);
+
+    const handleTab = (cat) => {
+        cat === 'all' ? router.push('/gallery') : router.push(`/gallery/${cat}`);
+    };
+
+    return (
+        <div className="max-w-7xl mx-auto px-4 md:px-8 pt-20 lg:pt-24 pb-20 space-y-8">
+
+            <h1>Gallery</h1>
+
+            <div className="flex gap-6 border-b border-gray-200 overflow-x-auto scrollbar-none">
+                {categories
+                    .filter(cat => cat.showInGallery !== false)
+                    .map((cat) => (
+                        <button
+                            key={cat.id}
+                            onClick={() => handleTab(cat.category)}
+                            className={`pb-3 text-sm whitespace-nowrap transition-colors duration-200 ${activeCategory === cat.category
+                                ? 'border-b-2 border-gray-900 text-gray-900 font-medium'
+                                : 'text-gray-400 hover:text-gray-700'
+                                }`}
+                        >
+                            {DISPLAY_LABELS[cat.category] ?? cat.title}
+                        </button>
+                    ))}
+            </div>
+
+            {pagedImages.length === 0 ? (
+                <p className="text-gray-400 text-center py-20">No images in this category yet.</p>
+            ) : !blursReady ? (
+                <div className="flex items-center justify-center py-32">
+                    <div className="w-8 h-8 rounded-full border-2 border-gray-200 border-t-gray-800 animate-spin" />
+                </div>
+            ) : (
+                <div
+                    id="gallery-section"
+                    ref={galleryRef}
+                    className="columns-2 sm:columns-3 lg:columns-4 gap-3"
+                >
+                    {pagedImages.map((item) => (
+                        <a
+                            key={item.id}
+                            data-pswp-src={item.variants.large}
+                            data-pswp-width="1920"
+                            data-pswp-height="1280"
+                            href={item.variants.large}
+                            className="block mb-3 break-inside-avoid overflow-hidden rounded-xl group cursor-zoom-in"
+                        >
+                            <div className="relative w-full overflow-hidden">
+                                {/* Blur image */}
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img
+                                    src={item.variants.blur}
+                                    alt=""
+                                    aria-hidden="true"
+                                    className="w-full h-auto object-cover transition-opacity duration-500 opacity-100"
+                                />
+
+                                {/* Real image */}
+                                {/* eslint-disable-next-line @next/next/no-img-element */}
+                                <img
+                                    src={item.variants.small}
+                                    alt={item.alt}
+                                    title={item.title || item.alt}
+                                    loading="lazy"
+                                    onLoad={(e) => {
+                                        const img = e.currentTarget;
+                                        const a = img.closest('a');
+
+                                        // fade in
+                                        img.style.opacity = 1;
+
+                                        if (a && img.naturalWidth > 0) {
+                                            const scale =
+                                                1920 /
+                                                Math.max(
+                                                    img.naturalWidth,
+                                                    img.naturalHeight
+                                                );
+
+                                            a.dataset.pswpWidth = Math.round(
+                                                img.naturalWidth * scale
+                                            );
+
+                                            a.dataset.pswpHeight = Math.round(
+                                                img.naturalHeight * scale
+                                            );
+                                        }
+                                    }}
+                                    onError={(e) => {
+                                        e.currentTarget.onerror = null;
+                                        e.currentTarget.src =
+                                            '/images/image-not-found-small.webp';
+                                        e.currentTarget.style.opacity = 1;
+                                    }}
+                                    className="absolute inset-0 w-full h-full object-cover opacity-0 transition-all duration-500 group-hover:scale-105"
+                                />
+                            </div>
+                        </a>
+                    ))}
+                </div>
+            )}
+
+            {totalPages > 1 && (
+                <div className="flex items-center justify-center gap-1 pt-4">
+
+                    {/* Prev */}
+                    <button
+                        onClick={() => setPage(p => Math.max(1, p - 1))}
+                        disabled={page === 1}
+                        className="px-3 py-1.5 text-sm rounded-lg border border-gray-200 hover:bg-gray-100 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                    >
+                        ‹ Prev
+                    </button>
+
+                    {/* Page numbers */}
+                    {Array.from({ length: totalPages }, (_, i) => i + 1)
+                        .filter(p => p === 1 || p === totalPages || Math.abs(p - page) <= 1)
+                        .reduce((acc, p, idx, arr) => {
+                            if (idx > 0 && p - arr[idx - 1] > 1) acc.push('…');
+                            acc.push(p);
+                            return acc;
+                        }, [])
+                        .map((p, idx) =>
+                            p === '…' ? (
+                                <span key={`ellipsis-${idx}`} className="px-2 text-gray-400 select-none">…</span>
+                            ) : (
+                                <button
+                                    key={p}
+                                    onClick={() => setPage(p)}
+                                    className={`min-w-9 px-3 py-1.5 text-sm rounded-lg border transition-colors ${p === page
+                                        ? 'bg-gray-900 text-white border-gray-900'
+                                        : 'border-gray-200 hover:bg-gray-100 text-gray-700'
+                                        }`}
+                                >
+                                    {p}
+                                </button>
+                            )
+                        )
+                    }
+
+                    {/* Next */}
+                    <button
+                        onClick={() => setPage(p => Math.min(totalPages, p + 1))}
+                        disabled={page === totalPages}
+                        className="px-3 py-1.5 text-sm rounded-lg border border-gray-200 hover:bg-gray-100 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                    >
+                        Next ›
+                    </button>
+                </div>
+            )}
+        </div>
+    );
+}

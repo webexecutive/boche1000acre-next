@@ -1,0 +1,122 @@
+'use client';
+
+import { useEffect } from 'react';
+import { useParams, useRouter } from 'next/navigation';
+import Image from 'next/image';
+import ReactMarkdown from 'react-markdown';
+import LogoCarousel from '../../../components/LogoCarousel';
+import group from '../../../data/groupData';
+import { aboutData } from '../../../data/aboutData.js';
+
+const AboutClient = () => {
+  const { slug } = useParams();
+  const router = useRouter();
+
+  const activeContent =
+    aboutData.find(tab => tab.slug === slug) || aboutData[0];
+
+  useEffect(() => {
+    if (!slug || !aboutData.some(tab => tab.slug === slug)) {
+      router.replace(`/about/${aboutData[0].slug}`);
+    }
+  }, [slug, router]);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, [activeContent.slug]);
+
+  const goToTab = (tabSlug) => {
+    router.push(`/about/${tabSlug}`);
+  };
+
+  return (
+    <>
+      <div className="min-h-[calc(100vh-80px)] max-w-7xl mx-auto bg-[#F7FFE6] flex flex-col md:flex-row w-full font-['DM_Sans']">
+
+        {/* Desktop Sidebar Navigation */}
+        <div className="hidden md:block w-64 lg:w-80 bg-[#C8D4AA] shrink-0 sticky top-0 h-screen overflow-y-auto">
+          <div className="flex flex-col pt-32">
+            {aboutData.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => goToTab(tab.slug)}
+                className={`w-full text-left py-6 px-8 lg:px-12 text-sm lg:text-base transition-colors duration-200 ${activeContent.slug === tab.slug
+                  ? 'bg-[#F7FFE6] text-gray-900 font-medium'
+                  : 'text-gray-700 hover:bg-black/5 font-normal hover:text-gray-900'
+                  }`}
+              >
+                <div className="w-4/5">{tab.navTitle}</div>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Main Content Area */}
+        <div className="flex-1 w-full bg-[#F7FFE6] min-h-screen pt-16">
+          <div className="max-w-7xl mx-auto w-full">
+
+            {/* Hero Section */}
+            <div className="w-full aspect-video md:aspect-21/9 max-h-120 bg-[#C8D4AA]/30 overflow-hidden relative">
+              <Image
+                key={activeContent.id}
+                src={activeContent.heroImage}
+                alt={activeContent.navTitle}
+                title={activeContent.navTitle}
+                fill
+                className="object-cover object-top"
+                priority
+              />
+            </div>
+
+            {/* Mobile Tab Navigation */}
+            <div className="md:hidden flex overflow-x-auto bg-[#C8D4AA] snap-x scrollbar-hide py-3 px-4 shadow-sm border-b border-[#b0bd92]/30">
+              <div className="flex gap-2 min-w-max">
+                {aboutData.map((tab) => (
+                  <button
+                    key={tab.id}
+                    onClick={() => goToTab(tab.slug)}
+                    className={`whitespace-nowrap px-5 py-2 rounded-full text-sm font-medium transition-all snap-center ${activeContent.slug === tab.slug
+                      ? 'bg-white text-gray-900 shadow-sm'
+                      : 'text-gray-700 hover:bg-black/5'
+                      }`}
+                  >
+                    {tab.navTitle}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Text Content */}
+            <div className="w-full text-gray-800">
+              <div className="prose max-w-none">
+                <div className="w-full px-6 md:px-12 lg:px-16 py-12 text-gray-800">
+                  <ReactMarkdown
+                    components={{
+                      h1: ({ ...props }) => <h1 className="text-2xl md:text-3xl font-bold mb-4" {...props} />,
+                      h2: ({ ...props }) => <h2 className="text-xl md:text-2xl font-semibold mt-6 mb-3" {...props} />,
+                      p: ({ ...props }) => <p className="mb-5 leading-relaxed text-justify" {...props} />,
+                      ul: ({ ...props }) => <ul className="list-disc pl-6 space-y-3 mt-3 mb-5" {...props} />,
+                      li: ({ ...props }) => <li className="leading-relaxed" {...props} />,
+                      // eslint-disable-next-line @next/next/no-img-element
+                      img: ({ alt, title, ...props }) => <img alt={alt || activeContent.navTitle} title={title || alt || activeContent.navTitle} {...props} />,
+                    }}
+                  >
+                    {activeContent.content}
+                  </ReactMarkdown>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div className='text-center py-16'>
+        <h3 className='pb-10'>Our Companies</h3>
+        <LogoCarousel items={group} />
+      </div>
+    </>
+  );
+};
+
+export default AboutClient;
