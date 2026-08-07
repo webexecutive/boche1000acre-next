@@ -31,7 +31,10 @@ const MenuModal = dynamic(() => import('../components/MenuModal'), {
         </div>
     ),
 });
-const BannerCarousel = lazy(() => import("../components/BannerCarousel"));
+const BannerCarousel = dynamic(() => import("../components/BannerCarousel"), {
+    ssr: false,
+    loading: () => <div className="w-full aspect-16/6 bg-gray-100 animate-pulse" />
+});
 const combinedReviews = [];
 const maxLength = Math.max(videoReviews.length, reviewData.length);
 for (let i = 0; i < maxLength; i++) {

@@ -143,7 +143,8 @@ export default function Gallery() {
                                 {/* eslint-disable-next-line @next/next/no-img-element */}
                                 <img
                                     src={item.variants.blur}
-                                    alt=""
+                                    alt={item.alt}
+                                    title={item.title || item.alt}
                                     aria-hidden="true"
                                     className="w-full h-auto object-cover transition-opacity duration-500 opacity-100"
                                 />
