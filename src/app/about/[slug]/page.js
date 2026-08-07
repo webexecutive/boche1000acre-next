@@ -10,7 +10,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const activeContent = aboutData.find(tab => tab.slug === slug) || aboutData[0];
-  const imageUrl = activeContent.heroImage || "/images/gallery/banner/79/large.webp";
+  const imageUrl = activeContent.heroImage || "/images/gallery/banner/190/large.webp";
 
   return {
     title: activeContent.seo.title,

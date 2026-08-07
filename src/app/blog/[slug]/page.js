@@ -14,7 +14,7 @@ export async function generateMetadata({ params }) {
     if (!blog) return {};
 
     const coverImage = blog.coverImageId ? getImageById(blog.coverImageId) : null;
-    const imageUrl = coverImage?.variants?.large || "/images/gallery/banner/79/large.webp";
+    const imageUrl = coverImage?.variants?.large || "/images/gallery/estate/178/large.webp";
 
     return {
         title: blog.seo.title,

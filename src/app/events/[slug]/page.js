@@ -14,7 +14,7 @@ export async function generateMetadata({ params }) {
 
     const imageId = event.bannerId || event.thumbnailId;
     const coverImage = imageId ? getImageById(imageId) : null;
-    const imageUrl = coverImage?.variants?.large || "/images/gallery/banner/79/large.webp";
+    const imageUrl = coverImage?.variants?.large || "/images/gallery/events/20/large.webp";
 
     return {
         title: event.seo.title,

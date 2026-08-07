@@ -18,7 +18,7 @@ export async function generateMetadata({ params }) {
     }
 
     const coverImage = room.images?.[0] ? getImageById(room.images[0]) : null;
-    const imageUrl = coverImage?.variants?.large || "/images/gallery/banner/79/large.webp";
+    const imageUrl = coverImage?.variants?.large || "/images/gallery/stays/79/large.webp";
 
     return {
         title: room.seo.title,

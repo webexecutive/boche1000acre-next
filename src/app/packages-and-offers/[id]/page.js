@@ -24,7 +24,7 @@ export async function generateMetadata({ params }) {
         `Book the ${pkg.title} at boCHE 1000 Acre, Wayanad.${pkg.cost ? ` Starting at ₹${pkg.cost.toLocaleString('en-IN')} per person.` : ''} Min ${pkg.minGuests} guests, check-in ${pkg.checkIn}.`;
     const seoKeywords = pkg.seo?.keywords ||
         `${pkg.title.toLowerCase()}, wayanad resort package, boche 1000 acre packages`;
-    const imageUrl = pkg.posterImg || "/images/gallery/banner/79/large.webp";
+    const imageUrl = pkg.posterImg || "/images/packages/dayout-package.webp";
 
     return {
         title: seoTitle,
