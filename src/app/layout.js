@@ -4,10 +4,14 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { Provider } from "../components/ui/provider";
 import { GoogleTagManager } from "@next/third-parties/google";
-
+import schemaData from "../data/schemaData";
 
 export const metadata = {
-  title: "boCHE 1000 Acres | Luxury Resorts in Wayanad Kerala",
+  metadataBase: new URL("https://boche1000acre.com"),
+  title: {
+    default: "boCHE 1000 Acres | Luxury Resorts in Wayanad Kerala",
+    template: "%s | boCHE 1000 Acres",
+  },
   description:
     "boCHE 1000 Acres is one of the best luxury experiential resorts in Wayanad Kerala set within a 1000-acre tea plantation.",
 
@@ -28,6 +32,22 @@ export const metadata = {
     title: "boCHE 1000 Acres | Luxury Resorts in Wayanad Kerala",
     description:
       "boCHE 1000 Acres is one of the best luxury experiential resorts in Wayanad Kerala set within a 1000-acre tea plantation.",
+    images: [
+      {
+        url: "/images/gallery/banner/190/large.webp",
+        width: 1200,
+        height: 630,
+        alt: "boCHE 1000 Acres Luxury Resort Wayanad",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "boCHE 1000 Acres | Luxury Resorts in Wayanad Kerala",
+    description:
+      "boCHE 1000 Acres is one of the best luxury experiential resorts in Wayanad Kerala set within a 1000-acre tea plantation.",
+    images: ["/images/gallery/banner/190/large.webp"],
   },
 
   icons: {
@@ -39,6 +59,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="light" style={{ colorScheme: "light" }}>
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+        />
+
         {/* Adobe Fonts */}
         <link
           rel="stylesheet"

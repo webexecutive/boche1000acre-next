@@ -28,7 +28,7 @@ const events = [
         imageIds: [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37],
 
         seo: {
-            title: "Youthful Wayanad | 1000 Bikers World Record | boCHE 1000 Acres",
+            title: "Youthful Wayanad 1000 Bikers Rally",
             description: "Relive Youthful Wayanad — a world-record 80km biker rally of 1,000 riders from boCHE 1000 Acres to Gundlupet, held by Royal Enfield Himalayan Club, featuring off-road adventures, a motor show, jungle safari, and live music at Wayanad's premier resort.",
             keywords: "youthful wayanad, boche bike rally, wayanad biker event, royal enfield himalayan club wayanad, world record bike ride wayanad, events in wayanad, boche 1000 acres events, wayanad tourism events, resorts in wayanad kerala",
         },
@@ -64,7 +64,7 @@ const events = [
         imageIds: [],
 
         seo: {
-            title: "boCHE Carnival | Wayanad Tourism Festival | boCHE 1000 Acres",
+            title: "boCHE Carnival Wayanad Festival",
             description: "Discover boCHE Carnival — Wayanad's grand New Year celebration with a Shopping Festival, live performances by Vedan and Gowry Lakshmi, and a record-breaking 65-foot Papaanji burning, held at boCHE 1000 Acres, Meppadi.",
             keywords: "boche carnival, wayanad new year event, wayanad tourism carnival, papaanji burning wayanad, new year celebration wayanad, events in wayanad, boche 1000 acres events, wayanad shopping festival, resorts in wayanad kerala",
         },

@@ -42,7 +42,7 @@ function Header() {
             <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
 
                 {/* Logo */}
-                <Link href="/">
+                <Link href="/" title="boCHE 1000 Acres Homepage">
                     <Image
                         src="/logos/1000 acre logo black.svg"
                         alt="Boche 1000 Acre Logo"
@@ -61,6 +61,7 @@ function Header() {
                         <Link
                             key={link.path}
                             href={link.path}
+                            title={`Navigate to ${link.name}`}
                             className={`transition-all duration-200 hover:underline hover:underline-offset-4 ${isTransparent
                                     ? `text-white ${isActive(link.path) ? "underline underline-offset-4" : ""}`
                                     : `${isActive(link.path)
@@ -77,8 +78,8 @@ function Header() {
                 <div className="flex items-center space-x-10">
                     {!isBookingPage && (
                         isTransparent
-                            ? <Link href="/booking"><Button variant="glass" size="sm" className="hidden md:flex">Book Now</Button></Link>
-                            : <Link href="/booking"><Button size="sm" className="hidden md:flex">Book Now</Button></Link>
+                            ? <Link href="/booking" title="Book your stay at boCHE 1000 Acres"><Button variant="glass" size="sm" className="hidden md:flex">Book Now</Button></Link>
+                            : <Link href="/booking" title="Book your stay at boCHE 1000 Acres"><Button size="sm" className="hidden md:flex">Book Now</Button></Link>
                     )}
 
                     {/* Hamburger */}
@@ -122,7 +123,7 @@ function Header() {
 
                     {/* Top bar */}
                     <div className="flex items-center justify-between px-6 py-5 border-b border-gray-300">
-                        <Link href="/" onClick={() => setMenuOpen(false)}>
+                        <Link href="/" title="boCHE 1000 Acres Homepage" onClick={() => setMenuOpen(false)}>
                             <Image
                                 src="/logos/1000 acre logo black.svg"
                                 alt="Boche 1000 Acre Logo"
@@ -161,6 +162,7 @@ function Header() {
                             <Link
                                 key={link.path}
                                 href={link.path}
+                                title={`Navigate to ${link.name}`}
                                 onClick={() => setMenuOpen(false)}
                                 className={`text-base font-medium py-3 px-4 rounded-full transition-all duration-200 ${isActive(link.path)
                                         ? "bg-[#3a5a1c] text-white pl-6"
@@ -175,7 +177,7 @@ function Header() {
                     {/* CTA buttons */}
                     {!isBookingPage && (
                         <div className="px-6 py-6 border-t border-gray-300 flex flex-col gap-3">
-                            <Link href="/booking" className="w-full flex" onClick={() => setMenuOpen(false)}>
+                            <Link href="/booking" title="Book your stay at boCHE 1000 Acres" className="w-full flex" onClick={() => setMenuOpen(false)}>
                                 <Button fullWidth>Book Now</Button>
                             </Link>
                         </div>

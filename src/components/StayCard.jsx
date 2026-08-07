@@ -14,6 +14,7 @@ export default function StayCard({
     return (
         <Link
             href={`/stays/${id}`}
+            title={`View details for ${title}`}
             className={`group flex flex-col w-full h-full bg-[#FDFFF8] rounded-2xl overflow-hidden shadow-[0_2px_12px_rgba(46,71,21,0.08)] hover:shadow-[0_8px_32px_rgba(46,71,21,0.16)] hover:-translate-y-1 transition-all duration-300 cursor-pointer ${className}`}
         >
             <CImage

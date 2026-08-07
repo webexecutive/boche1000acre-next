@@ -1,5 +1,5 @@
 export const metadata = {
-    title: "Terms & Conditions | boCHE 1000 Acre",
+    title: "Terms & Conditions",
     description:
         "Read the Terms & Conditions for boCHE 1000 Acre, covering eligibility, acceptable use, resort policies, cancellation policy, and child policy.",
 };

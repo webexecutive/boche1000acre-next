@@ -1,5 +1,5 @@
 export const metadata = {
-    title: "Privacy Policy | boCHE 1000 Acre Wayanad",
+    title: "Privacy Policy",
     description: "Read the Privacy Policy for boCHE 1000 Acre, Wayanad — how we collect, use, and protect your personal data when you book, enquire, or browse our website.",
 };
 

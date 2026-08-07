@@ -13,6 +13,9 @@ export async function generateMetadata({ params }) {
 
     if (!blog) return {};
 
+    const coverImage = blog.coverImageId ? getImageById(blog.coverImageId) : null;
+    const imageUrl = coverImage?.variants?.large || "/images/gallery/banner/79/large.webp";
+
     return {
         title: blog.seo.title,
         description: blog.seo.description,
@@ -24,7 +27,22 @@ export async function generateMetadata({ params }) {
             title: blog.seo.title,
             description: blog.seo.description,
             url: `https://boche1000acre.com/blog/${blog.slug}`,
+            siteName: "boCHE 1000 Acre",
+            images: [
+                {
+                    url: imageUrl,
+                    width: 1200,
+                    height: 630,
+                    alt: blog.title,
+                },
+            ],
             type: "article",
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: blog.seo.title,
+            description: blog.seo.description,
+            images: [imageUrl],
         },
     };
 }

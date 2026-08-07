@@ -12,6 +12,7 @@ export default function PackageCard({ pkg }) {
     return (
         <Link
             href={`/packages-and-offers/${pkg.id}`}
+            title={`View details for ${pkg.title}`}
             className="block group"
         >
             <div className="bg-[#FDFFF8] rounded-2xl overflow-hidden shadow-[0_2px_12px_rgba(46,71,21,0.08)] hover:shadow-[0_8px_32px_rgba(46,71,21,0.16)] hover:-translate-y-1 transition-all duration-300">

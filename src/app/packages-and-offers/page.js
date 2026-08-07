@@ -2,9 +2,33 @@ import { packages } from '../../data/packagesData';
 import PackageCard from '../../components/PackageCard';
 
 export const metadata = {
-    title: "Wayanad Resort Packages & Offers | boCHE 1000 Acre",
+    title: "Wayanad Resort Packages & Offers",
     description: "Explore resort packages at boCHE 1000 Acre in Wayanad. Discover stay packages, family getaways, couple experiences, day outings, adventure activities, and exclusive offers within a breathtaking 1000-acre tea plantation.",
     keywords: "wayanad resort packages, resort offers wayanad, couple package wayanad, family package wayanad, day outing wayanad, stay packages in wayanad, adventure resort packages wayanad, tea plantation resort wayanad, best stay packages in wayanad",
+    alternates: {
+        canonical: "https://boche1000acre.com/packages-and-offers",
+    },
+    openGraph: {
+        title: "Wayanad Resort Packages & Offers | boCHE 1000 Acres",
+        description: "Explore resort packages at boCHE 1000 Acre in Wayanad. Discover stay packages, family getaways, couple experiences, day outings, adventure activities, and exclusive offers within a breathtaking 1000-acre tea plantation.",
+        url: "https://boche1000acre.com/packages-and-offers",
+        siteName: "boCHE 1000 Acre",
+        images: [
+            {
+                url: "/images/packages/dayout-package.webp",
+                width: 1200,
+                height: 630,
+                alt: "boCHE 1000 Acres Resort Packages",
+            },
+        ],
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Wayanad Resort Packages & Offers | boCHE 1000 Acres",
+        description: "Explore resort packages at boCHE 1000 Acre in Wayanad. Discover stay packages, family getaways, couple experiences, day outings, adventure activities, and exclusive offers within a breathtaking 1000-acre tea plantation.",
+        images: ["/images/packages/dayout-package.webp"],
+    },
 };
 
 export default function PackagesAndOffers() {

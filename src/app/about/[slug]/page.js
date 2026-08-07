@@ -10,6 +10,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   const activeContent = aboutData.find(tab => tab.slug === slug) || aboutData[0];
+  const imageUrl = activeContent.heroImage || "/images/gallery/banner/79/large.webp";
 
   return {
     title: activeContent.seo.title,
@@ -17,6 +18,27 @@ export async function generateMetadata({ params }) {
     keywords: activeContent.seo.keywords,
     alternates: {
       canonical: activeContent.seo.url,
+    },
+    openGraph: {
+      title: activeContent.seo.title,
+      description: activeContent.seo.description,
+      url: activeContent.seo.url,
+      siteName: "boCHE 1000 Acre",
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: activeContent.navTitle,
+        },
+      ],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: activeContent.seo.title,
+      description: activeContent.seo.description,
+      images: [imageUrl],
     },
   };
 }

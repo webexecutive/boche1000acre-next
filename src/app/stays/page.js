@@ -1,10 +1,36 @@
 import StaysGrid from "./StaysGrid";
 
 export const metadata = {
-    title: "Rooms & Unique Stays in Wayanad | boCHE 1000 Acre",
+    title: "Rooms & Unique Stays in Wayanad",
     description:
         "Discover unique stays in Wayanad at boCHE 1000 Acre — Bubble Domes, British Bungalows, Mud Houses, and more, set within a 1000-acre tea plantation resort.",
     keywords: "rooms in wayanad, unique stays in wayanad",
+    alternates: {
+        canonical: "https://boche1000acre.com/stays",
+    },
+    openGraph: {
+        title: "Rooms & Unique Stays in Wayanad | boCHE 1000 Acres",
+        description:
+            "Discover unique stays in Wayanad at boCHE 1000 Acre — Bubble Domes, British Bungalows, Mud Houses, and more, set within a 1000-acre tea plantation resort.",
+        url: "https://boche1000acre.com/stays",
+        siteName: "boCHE 1000 Acre",
+        images: [
+            {
+                url: "/images/gallery/stays/79/large.webp",
+                width: 1200,
+                height: 630,
+                alt: "Unique Stays in Wayanad boCHE 1000 Acre",
+            },
+        ],
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Rooms & Unique Stays in Wayanad | boCHE 1000 Acres",
+        description:
+            "Discover unique stays in Wayanad at boCHE 1000 Acre — Bubble Domes, British Bungalows, Mud Houses, and more, set within a 1000-acre tea plantation resort.",
+        images: ["/images/gallery/stays/79/large.webp"],
+    },
 };
 
 const StaysPage = () => {

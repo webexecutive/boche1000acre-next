@@ -24,11 +24,36 @@ export async function generateMetadata({ params }) {
         `Book the ${pkg.title} at boCHE 1000 Acre, Wayanad.${pkg.cost ? ` Starting at ₹${pkg.cost.toLocaleString('en-IN')} per person.` : ''} Min ${pkg.minGuests} guests, check-in ${pkg.checkIn}.`;
     const seoKeywords = pkg.seo?.keywords ||
         `${pkg.title.toLowerCase()}, wayanad resort package, boche 1000 acre packages`;
+    const imageUrl = pkg.posterImg || "/images/gallery/banner/79/large.webp";
 
     return {
         title: seoTitle,
         description: seoDescription,
         keywords: seoKeywords,
+        alternates: {
+            canonical: `https://boche1000acre.com/packages-and-offers/${pkg.id}`,
+        },
+        openGraph: {
+            title: seoTitle,
+            description: seoDescription,
+            url: `https://boche1000acre.com/packages-and-offers/${pkg.id}`,
+            siteName: "boCHE 1000 Acre",
+            images: [
+                {
+                    url: imageUrl,
+                    width: 1200,
+                    height: 630,
+                    alt: pkg.title,
+                },
+            ],
+            type: "website",
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: seoTitle,
+            description: seoDescription,
+            images: [imageUrl],
+        },
     };
 }
 
@@ -41,7 +66,7 @@ export default async function PackageDetails({ params }) {
             <div className="min-h-[60vh] flex flex-col items-center justify-center gap-4 p-8">
                 <h1 className="text-3xl">Package not found</h1>
                 <p className="text-gray-800">We couldn't find the package you were looking for.</p>
-                <Link href="/packages-and-offers">
+                <Link href="/packages-and-offers" title="View all resort packages and offers">
                     <Button variant="primary">View All Packages</Button>
                 </Link>
             </div>
@@ -126,7 +151,7 @@ export default async function PackageDetails({ params }) {
                             </div>
                         )}
 
-                        <Link href="/booking">
+                        <Link href="/booking" title={`Book the ${pkg.title} package`}>
                             <Button variant="primary" size="sm">Book Now</Button>
                         </Link>
                     </div>

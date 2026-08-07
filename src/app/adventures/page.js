@@ -2,9 +2,33 @@ import adventures from '../../data/adventuresData';
 import AdventureGallery from './AdventureGallery';
 
 export const metadata = {
-    title: "Adventure Activities in Wayanad | Zipline | boCHE 1000 Acre",
+    title: "Adventure Activities in Wayanad | Zipline",
     description: "Experience thrilling adventure activities in Wayanad at boCHE 1000 Acre. Enjoy Zipline, Giant Swing, ATV Rides, Sky Cycling, and exciting outdoor experiences amidst a breathtaking 1000-acre tea plantation.",
     keywords: "adventure activities in wayanad, zipline wayanad, ATV ride wayanad, sky cycling wayanad, giant swing wayanad, adventure resort wayanad, wayanad resorts with activities, outdoor activities in wayanad",
+    alternates: {
+        canonical: "https://boche1000acre.com/adventures",
+    },
+    openGraph: {
+        title: "Adventure Activities in Wayanad | Zipline | boCHE 1000 Acres",
+        description: "Experience thrilling adventure activities in Wayanad at boCHE 1000 Acre. Enjoy Zipline, Giant Swing, ATV Rides, Sky Cycling, and exciting outdoor experiences amidst a breathtaking 1000-acre tea plantation.",
+        url: "https://boche1000acre.com/adventures",
+        siteName: "boCHE 1000 Acre",
+        images: [
+            {
+                url: "/images/gallery/adventures/1/large.webp",
+                width: 1200,
+                height: 630,
+                alt: "Adventure Activities in Wayanad boCHE 1000 Acre",
+            },
+        ],
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Adventure Activities in Wayanad | Zipline | boCHE 1000 Acres",
+        description: "Experience thrilling adventure activities in Wayanad at boCHE 1000 Acre. Enjoy Zipline, Giant Swing, ATV Rides, Sky Cycling, and exciting outdoor experiences amidst a breathtaking 1000-acre tea plantation.",
+        images: ["/images/gallery/adventures/1/large.webp"],
+    },
 };
 
 export default function AdventuresPage() {

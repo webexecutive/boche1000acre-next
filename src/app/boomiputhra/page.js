@@ -7,9 +7,33 @@ import Image from "next/image";
 
 
 export const metadata = {
-    title: "Bhoomiputhra Tea & Coffee Plantations in Wayanad",
+    title: "Bhoomiputhra Tea & Coffee Estate",
     description: "Discover Bhoomiputhra's 600-acre plantation estate in Wayanad, Kerala. Premium tea, coffee, spices, sustainable farming practices, and advanced tea manufacturing facilities.",
     keywords: "Wayanad tea plantation, tea estate Wayanad, coffee plantation Wayanad, tea factory Wayanad, Kerala tea plantation, premium tea Kerala, spice plantation Wayanad, sustainable agriculture Kerala, Bhoomiputhra",
+    alternates: {
+        canonical: "https://boche1000acre.com/boomiputhra",
+    },
+    openGraph: {
+        title: "Bhoomiputhra Tea & Coffee Estate | boCHE 1000 Acres",
+        description: "Discover Bhoomiputhra's 600-acre plantation estate in Wayanad, Kerala. Premium tea, coffee, spices, sustainable farming practices, and advanced tea manufacturing facilities.",
+        url: "https://boche1000acre.com/boomiputhra",
+        siteName: "boCHE 1000 Acre",
+        images: [
+            {
+                url: "/images/bhoomiputhrabg-lg.webp",
+                width: 1200,
+                height: 630,
+                alt: "Bhoomiputhra Tea & Coffee Plantations Wayanad",
+            },
+        ],
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Bhoomiputhra Tea & Coffee Plantations in Wayanad",
+        description: "Discover Bhoomiputhra's 600-acre plantation estate in Wayanad, Kerala. Premium tea, coffee, spices, sustainable farming practices, and advanced tea manufacturing facilities.",
+        images: ["/images/bhoomiputhrabg-lg.webp"],
+    },
 };
 
 export default function Boomiputhra() {

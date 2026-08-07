@@ -5,7 +5,7 @@ const rooms = [
         name: "British Bungalow",
 
         seo: {
-            title: "British Bungalow Stay in Wayanad | boCHE 1000 Acres",
+            title: "British Bungalow Stay in Wayanad",
             description: "Stay in a restored colonial British Bungalow at boCHE 1000 Acres — one of the best resorts in Wayanad Kerala. A spacious 4-bedroom heritage villa with mountain views, private verandah, and luxury amenities, ideal for families and group stays in Wayanad.",
             keywords: "british bungalow wayanad, family stay in wayanad, resorts in wayanad kerala, best resorts in wayanad, luxury resorts in wayanad, heritage stay wayanad, best resort in wayanad kerala, rooms at wayanad, wayanad resort packages, stay in wayanad",
         },
@@ -70,7 +70,7 @@ const rooms = [
         name: "Mud House",
 
         seo: {
-            title: "Mud House Stay in Wayanad | boCHE 1000 Acres",
+            title: "Mud House Stay in Wayanad",
             description: "Stay in a traditional handcrafted Mud House at boCHE 1000 Acres — one of the most unique stays in Wayanad Kerala. Naturally cool, rustically elegant, and set inside a 1000-acre tea plantation resort in Wayanad.",
             keywords: "mud house wayanad, unique stays in wayanad, eco resort wayanad, resorts in wayanad kerala, best resorts in wayanad, stay in wayanad, rooms in wayanad kerala, wayanad resort packages, best resort in wayanad kerala, luxury resorts in wayanad",
         },
@@ -136,7 +136,7 @@ const rooms = [
         name: "Hill Pod",
 
         seo: {
-            title: "Hill Pod Stay in Wayanad | boCHE 1000 Acres",
+            title: "Hill Pod Stay in Wayanad",
             description: "Stay in the Hill Pod at boCHE 1000 Acres — a luxury mountain view pod inside a tea plantation resort in Wayanad Kerala. Floor-to-ceiling glass panels, panoramic plantation views, and modern comfort make it one of the best stays in Wayanad for couples.",
             keywords: "hill pod wayanad, unique stays in wayanad, luxury resorts in wayanad, resorts in wayanad kerala, best resorts in wayanad, couple stay wayanad, rooms in wayanad kerala, stay in wayanad, wayanad resort packages, best resort in wayanad kerala",
         },
@@ -202,7 +202,7 @@ const rooms = [
         name: "Bubble Dome",
 
         seo: {
-            title: "Bubble Dome Stay in Wayanad | boCHE 1000 Acres",
+            title: "Bubble Dome Stay in Wayanad",
             description: "Stay in a transparent Bubble Dome at boCHE 1000 Acres — one of the most unique stays in Wayanad Kerala. A climate-controlled luxury suite with 360-degree views of the night sky and tea plantation, set inside a 1000-acre resort in Wayanad.",
             keywords: "bubble dome wayanad, unique stays in wayanad, best resorts in wayanad, luxury resorts in wayanad, resorts in wayanad kerala, romantic resorts in wayanad, stay in wayanad, wayanad resort booking, rooms in wayanad kerala, best resort in wayanad kerala",
         },
@@ -268,7 +268,7 @@ const rooms = [
         name: "SexyDome",
 
         seo: {
-            title: "SexyDome Romantic Stay in Wayanad | boCHE 1000 Acres",
+            title: "SexyDome Romantic Stay in Wayanad",
             description: "Book the SexyDome at boCHE 1000 Acres — a private romantic dome stay in Wayanad Kerala with panoramic sky views, luxury interiors, and a secluded sit-out. One of the best romantic resorts in Wayanad for honeymoons and anniversaries.",
             keywords: "romantic resorts in wayanad, couple stay wayanad, unique stays in wayanad, resorts in wayanad kerala, best resorts in wayanad, luxury resorts in wayanad, honeymoon resort wayanad, stay in wayanad, wayanad resort booking, best resort in wayanad kerala",
         },
@@ -334,7 +334,7 @@ const rooms = [
     name: "Backpackers Room",
 
     seo: {
-        title: "Backpackers Room in Wayanad | boCHE 1000 Acres",
+        title: "Backpackers Room in Wayanad",
         description: "Book a private room at Backpackers Bungalow, boCHE 1000 Acres — a comfortable budget-friendly couple stay in Wayanad Kerala inside a 1000-acre tea plantation resort. Modern amenities, scenic plantation views, and easy access to all estate adventure activities in Wayanad.",
         keywords: "budget rooms in wayanad kerala, backpackers stay wayanad, resorts in wayanad kerala, best resorts in wayanad, stay in wayanad, couple stay wayanad, wayanad resort packages, resort stay in wayanad, wayanad resort booking, best resort in wayanad kerala",
     },
@@ -400,7 +400,7 @@ const rooms = [
     name: "Backpackers Bungalow Full Property",
 
     seo: {
-        title: "Backpackers Bungalow Full Villa in Wayanad | boCHE 1000 Acres",
+        title: "Backpackers Bungalow Villa Stay",
         description: "Book the full Backpackers Bungalow villa at boCHE 1000 Acres — a 4-bedroom budget group stay in Wayanad Kerala with shared kitchen, living areas, and scenic tea plantation views. One of the best resorts in Wayanad for families, friends, and group travel.",
         keywords: "best resorts in wayanad for friends, backpackers group stay wayanad, resorts in wayanad kerala, best resorts in wayanad, budget group stay wayanad, group stay wayanad, wayanad resort packages, resorts in wayanad with activities, stay in wayanad, best resort in wayanad kerala",
     },
@@ -465,7 +465,7 @@ const rooms = [
         name: "Agraharam",
 
         seo: {
-            title: "Agraharam Stay in Wayanad | boCHE 1000 Acres",
+            title: "Agraharam Heritage Stay in Wayanad",
             description: "Stay in Agraharam at boCHE 1000 Acres — a private forest hideaway in Wayanad Kerala for friends and small groups. Traditional architecture, spacious courtyard, modern amenities, and full access to adventure activities in Wayanad inside a 1000-acre tea plantation resort.",
             keywords: "resorts in wayanad kerala, best resorts in wayanad for friends, unique stays in wayanad, stay in wayanad, resorts in wayanad with activities, wayanad resort packages, adventure activities in wayanad, rooms in wayanad kerala, resort stay in wayanad, best resort in wayanad kerala",
         },
@@ -531,7 +531,7 @@ const rooms = [
         name: "Natural Tent Stay",
 
         seo: {
-            title: "Tent Stay in Wayanad | Camping Resort | boCHE 1000 Acres",
+            title: "Tent Stay & Camping in Wayanad",
             description: "Experience a natural tent stay at boCHE 1000 Acres — one of the best camping resorts in Wayanad Kerala. Sleep under the stars inside a 1000-acre tea plantation with campfire nights, property trekking, and full access to adventure activities in Wayanad.",
             keywords: "tent stay in wayanad, wayanad camp stay, best tent stay in wayanad, resorts in wayanad kerala, adventure activities in wayanad, stay in wayanad, wayanad resort packages, resorts in wayanad with activities, tent stay wayanad, best resort in wayanad kerala",
         },

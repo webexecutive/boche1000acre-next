@@ -27,9 +27,9 @@ export default function CImage({
       {blur && !loaded && (
         <Image
           src={blur}
-          alt=""
+          alt={alt}
+          title={resolvedTitle}
           fill
-          aria-hidden
           unoptimized
           className={`${resolvedImgClass} scale-110 blur-xl`}
         />

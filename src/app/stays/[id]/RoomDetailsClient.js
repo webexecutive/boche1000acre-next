@@ -104,7 +104,7 @@ const RoomDetailsClient = ({ id }) => {
             <div className="min-h-[50vh] flex flex-col items-center justify-center p-8">
                 <h2 className="text-3xl font-bold mb-4">Room not found</h2>
                 <p className="text-gray-500 mb-6">We couldn't find the room you were looking for.</p>
-                <Link href="/"><Button variant="primary">Back to Home</Button></Link>
+                <Link href="/" title="Return to Homepage"><Button variant="primary">Back to Home</Button></Link>
             </div>
         );
     }
@@ -193,7 +193,7 @@ const RoomDetailsClient = ({ id }) => {
                         </span>
                     </div>
                     <div className="flex justify-center px-2">
-                        <Link href="/booking">
+                        <Link href="/booking" title={`Book your stay at ${room.name}`}>
                             <Button variant="primary">Book Now</Button>
                         </Link>
                     </div>
@@ -289,7 +289,7 @@ const RoomDetailsClient = ({ id }) => {
                     </EmblaCarousel>
 
                     <div className="mt-8 flex justify-center">
-                        <Link href="/stays">
+                        <Link href="/stays" title="View all available stays in Wayanad">
                             <Button variant="primary">View All Stays</Button>
                         </Link>
                     </div>

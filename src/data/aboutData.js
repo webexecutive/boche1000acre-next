@@ -8,7 +8,7 @@ export const aboutData = [
     heroTitle: "About\nboCHE 1000 Acre",
 
     seo: {
-      title: "About boCHE 1000 Acres | Luxury Resort in Wayanad Kerala",
+      title: "About boCHE 1000 Acre Resort",
       description:
         "Learn about boCHE 1000 Acres — a spectacular 1000-acre luxury resort in Wayanad Kerala owned by Boby Chemmanur International Group. One of the best resorts in Wayanad offering adventure, nature, and authentic Kerala hospitality in Meppadi.",
       keywords:
@@ -47,7 +47,7 @@ boCHE 1000 Acre represents innovation, scale, and ambition, setting a new benchm
     heroTitle: "About\nBoby Chemmanur International Group",
 
     seo: {
-      title: "Boby Chemmanur International Group | About boCHE 1000 Acres",
+      title: "Boby Chemmanur International Group",
       description:
         "Discover the Boby Chemmanur International Group — the conglomerate behind boCHE 1000 Acres, one of the best resorts in Wayanad Kerala. From jewellery to tea plantations, NBFC, resorts, and entertainment, the group spans 56 countries and 19 crore customers.",
       keywords:
@@ -99,7 +99,7 @@ We are preparing to list our company on the stock exchange in the coming years, 
     heroTitle: "About\nDr. Boby Chemmanur\n(boCHE)",
 
     seo: {
-      title: "Dr. Boby Chemmanur (boCHE) | Founder of boCHE 1000 Acres Wayanad",
+      title: "Dr. Boby Chemmanur (boCHE)",
       description:
         "Learn about Dr. Boby Chemmanur — founder of the Boby Chemmanur International Group and the visionary behind boCHE 1000 Acres, one of the best resorts in Wayanad Kerala. Philanthropist, record-breaker, and business leader.",
       keywords:

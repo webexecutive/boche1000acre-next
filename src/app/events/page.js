@@ -2,9 +2,33 @@ import events from '../../data/events.js';
 import EventCard from '../../components/EventCard.jsx';
 
 export const metadata = {
-    title: "Events in Wayanad | boCHE 1000 Acres",
+    title: "Events & Festivals in Wayanad",
     description: "Discover upcoming events, cultural gatherings, celebrations, and memorable experiences hosted at boCHE 1000 Acres in Wayanad.",
     keywords: "events in wayanad, wayanad events, resort events wayanad, cultural events kerala, boche events",
+    alternates: {
+        canonical: "https://boche1000acre.com/events",
+    },
+    openGraph: {
+        title: "Events & Festivals in Wayanad | boCHE 1000 Acres",
+        description: "Discover upcoming events, cultural gatherings, celebrations, and memorable experiences hosted at boCHE 1000 Acres in Wayanad.",
+        url: "https://boche1000acre.com/events",
+        siteName: "boCHE 1000 Acre",
+        images: [
+            {
+                url: "/images/gallery/events/20/large.webp",
+                width: 1200,
+                height: 630,
+                alt: "boCHE 1000 Acres Events in Wayanad",
+            },
+        ],
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Events & Festivals in Wayanad | boCHE 1000 Acres",
+        description: "Discover upcoming events, cultural gatherings, celebrations, and memorable experiences hosted at boCHE 1000 Acres in Wayanad.",
+        images: ["/images/gallery/events/20/large.webp"],
+    },
 };
 
 const isFuture = (e) => !e.eventOver;

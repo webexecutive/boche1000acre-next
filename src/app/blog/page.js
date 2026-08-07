@@ -2,9 +2,33 @@ import blogData from '../../data/blogData';
 import BlogFilter from './BlogFilter';
 
 export const metadata = {
-    title: "Blog | Stories from the Heart of Nature | boCHE 1000 Acres",
+    title: "Stories from the Heart of Nature",
     description: "Explore travel stories, nature guides, Kerala cuisine, adventure tips, and sustainability insights from boCHE 1000 Acres — a luxury resort in Wayanad, Kerala.",
     keywords: "wayanad blog, things to do in wayanad, wayanad travel guide, kerala nature stories, boCHE 1000 acres blog, tea plantation wayanad, wayanad adventure, kerala cuisine",
+    alternates: {
+        canonical: "https://boche1000acre.com/blog",
+    },
+    openGraph: {
+        title: "Blog | Stories from the Heart of Nature | boCHE 1000 Acres",
+        description: "Explore travel stories, nature guides, Kerala cuisine, adventure tips, and sustainability insights from boCHE 1000 Acres — a luxury resort in Wayanad, Kerala.",
+        url: "https://boche1000acre.com/blog",
+        siteName: "boCHE 1000 Acre",
+        images: [
+            {
+                url: "/images/gallery/estate/178/large.webp",
+                width: 1200,
+                height: 630,
+                alt: "boCHE 1000 Acres Travel Blog",
+            },
+        ],
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Stories from the Heart of Nature | boCHE 1000 Acres",
+        description: "Explore travel stories, nature guides, Kerala cuisine, adventure tips, and sustainability insights from boCHE 1000 Acres — a luxury resort in Wayanad, Kerala.",
+        images: ["/images/gallery/estate/178/large.webp"],
+    },
 };
 
 export default function BlogPage() {

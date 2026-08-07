@@ -11,7 +11,7 @@ const blogData = [
     featured: false,
 
     seo: {
-      title: "The Art of Tea Tasting at a Tea Plantation Resort in Wayanad | boCHE 1000 Acres",
+      title: "The Art of Tea Tasting in Wayanad",
       description:
         "Discover the art of tea tasting at boCHE 1000 Acres, one of the best resorts in Wayanad Kerala. Explore our tea plantation, learn how Wayanad tea is made, and experience a luxury stay in Wayanad like no other.",
       keywords:
@@ -88,7 +88,7 @@ const blogData = [
     coverImageId: 174,
 
     seo: {
-      title: "Eco-Friendly Luxury Resort in Wayanad Kerala | boCHE 1000 Acres",
+      title: "Eco-Friendly Luxury Resort in Wayanad",
       description:
         "Discover how boCHE 1000 Acres — one of the best luxury resorts in Wayanad Kerala — blends sustainable architecture, responsible tourism, and authentic Kerala hospitality across a 1000-acre tea plantation.",
       keywords:
@@ -176,7 +176,7 @@ const blogData = [
     coverImageId: 179,
 
     seo: {
-      title: "Waterfall Resort in Wayanad | Private Estate Waterfall | boCHE 1000 Acres",
+      title: "Private Estate Waterfall in Wayanad",
       description:
         "Discover a hidden waterfall inside boCHE 1000 Acres — one of the best resorts in Wayanad Kerala. Located within a 1000-acre tea plantation, this private estate waterfall is one of Wayanad's most unique adventure experiences.",
       keywords:
@@ -281,7 +281,7 @@ const blogData = [
     coverImageId: 180,
 
     seo: {
-      title: "Bubble Dome Stay in Wayanad | Sleep Under the Stars at boCHE 1000 Acres",
+      title: "Bubble Dome Stay in Wayanad",
       description:
         "Stay in a Bubble Dome at boCHE 1000 Acres — one of the most unique stays in Wayanad Kerala. A transparent luxury suite inside a 1000-acre tea plantation, with uninterrupted views of the night sky and the Western Ghats.",
       keywords:
@@ -370,7 +370,7 @@ const blogData = [
     coverImageId: 75,
 
     seo: {
-      title: "Best Kerala Food in Wayanad | boCHE Toddy Pub | boCHE 1000 Acres",
+      title: "Best Kerala Food at boCHE Toddy Pub",
       description:
         "Discover authentic Kerala cuisine at boCHE Toddy Pub, Meppadi, Wayanad — fish pollichathu, kappa with beef, karimeen curry, toddy shop classics and more, served inside a 1000-acre tea plantation resort in Wayanad Kerala.",
       keywords:
@@ -466,7 +466,7 @@ const blogData = [
     coverImageId: 164,
 
     seo: {
-      title: "Adventure Activities in Wayanad | Zipline, ATV, Sky Cycling | boCHE 1000 Acres",
+      title: "Top Adventure Activities in Wayanad",
       description:
         "Discover the best adventure activities in Wayanad at boCHE 1000 Acres — zipline, ATV rides, sky cycling, giant swing, jeep safari, and a glass bridge, all inside a 1000-acre tea plantation resort in Wayanad Kerala.",
       keywords:

@@ -17,14 +17,14 @@ function Breadcrumbs() {
 
   return (
     <nav className="flex items-center gap-1 text-sm text-gray-400">
-      <Link href="/" className="hover:text-black transition-colors">Home</Link>
+      <Link href="/" title="Go to Homepage" className="hover:text-black transition-colors">Home</Link>
       {crumbs.map((crumb, i) => (
         <span key={crumb.path} className="flex items-center gap-1">
           <span>/</span>
           {i === crumbs.length - 1 ? (
             <span className="text-black font-medium">{crumb.label}</span>
           ) : (
-            <Link href={crumb.path} className="hover:text-black transition-colors">
+            <Link href={crumb.path} title={`Navigate to ${crumb.label}`} className="hover:text-black transition-colors">
               {crumb.label}
             </Link>
           )}

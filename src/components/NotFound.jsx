@@ -30,7 +30,7 @@ const NotFound = () => {
       </p>
 
       {/* Button */}
-      <Link href="/">
+      <Link href="/" title="Return to boCHE 1000 Acres Homepage">
         <Button>Go Back Home</Button>
       </Link>
 

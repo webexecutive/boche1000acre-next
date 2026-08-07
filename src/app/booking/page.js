@@ -3,9 +3,33 @@ import Button from "@/components/Button";
 import BookingForm from "./BookingForm";
 
 export const metadata = {
-    title: "Book Your Stay | boCHE 1000 Acres Wayanad",
+    title: "Book Your Stay in Wayanad",
     description: "Submit your enquiry to book a stay at boCHE 1000 Acres, Wayanad. Fill in your details and our team will get back to you shortly to confirm your reservation.",
     keywords: "wayanad resort booking, boche 1000 acre booking, book resort wayanad, wayanad enquiry form",
+    alternates: {
+        canonical: "https://boche1000acre.com/booking",
+    },
+    openGraph: {
+        title: "Book Your Stay in Wayanad | boCHE 1000 Acres",
+        description: "Submit your enquiry to book a stay at boCHE 1000 Acres, Wayanad. Fill in your details and our team will get back to you shortly to confirm your reservation.",
+        url: "https://boche1000acre.com/booking",
+        siteName: "boCHE 1000 Acre",
+        images: [
+            {
+                url: "/images/gallery/banner/190/large.webp",
+                width: 1200,
+                height: 630,
+                alt: "Book Stay at boCHE 1000 Acres Wayanad",
+            },
+        ],
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Book Your Stay in Wayanad | boCHE 1000 Acres",
+        description: "Submit your enquiry to book a stay at boCHE 1000 Acres, Wayanad. Fill in your details and our team will get back to you shortly to confirm your reservation.",
+        images: ["/images/gallery/banner/190/large.webp"],
+    },
 };
 
 export default function BookingPage() {
@@ -38,7 +62,7 @@ export default function BookingPage() {
                             </div>
                         </div>
 
-                        <a href="tel:+919961008008">
+                        <a href="tel:+919961008008" title="Call boCHE 1000 Acres Reservation Hotline at +91 9961008008">
                             <Button size="sm">
                                 Call Now
                             </Button>

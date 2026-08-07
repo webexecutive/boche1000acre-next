@@ -26,6 +26,7 @@ const BlogCard = ({
     return (
       <Link
         href={href}
+        title={`Read featured article: ${title}`}
         className="group block relative w-full aspect-video md:aspect-21/9 overflow-hidden rounded-2xl shadow-[0_2px_12px_rgba(46,71,21,0.08)] hover:shadow-[0_8px_32px_rgba(46,71,21,0.16)] hover:-translate-y-1 transition-all duration-300"
       >
         <CImage
@@ -79,6 +80,7 @@ const BlogCard = ({
   return (
     <Link
       href={href}
+      title={`Read article: ${title}`}
       className="group flex flex-col bg-[#FDFFF8] rounded-2xl overflow-hidden shadow-[0_2px_12px_rgba(46,71,21,0.08)] hover:shadow-[0_8px_32px_rgba(46,71,21,0.16)] hover:-translate-y-1 transition-all duration-300"
     >
       {/* Image */}

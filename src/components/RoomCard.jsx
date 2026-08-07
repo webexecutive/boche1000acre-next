@@ -17,6 +17,7 @@ export default function RoomCard({
     return (
         <Link
             href={`/stays/${id}`}
+            title={`View details and book ${title}`}
             className={`flex flex-col w-full bg-[#FDFFF8] rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer ${className}`}
         >
             {/* Image */}

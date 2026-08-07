@@ -4,9 +4,33 @@ import Button from "../../components/Button";
 import ContactForm from "./ContactForm";
 
 export const metadata = {
-    title: "Contact boCHE 1000 Acres | Resort Booking & Enquiries in Wayanad",
+    title: "Contact & Resort Booking in Wayanad",
     description: "Get in touch with boCHE 1000 Acres, a luxury nature resort in Wayanad. Contact us for bookings, stay enquiries, events, adventure activities, and resort information.",
     keywords: "contact boche 1000 acres, wayanad resort contact, resort booking wayanad, luxury resort kerala contact, boche wayanad phone number, wayanad stay enquiry, resort near meppadi",
+    alternates: {
+        canonical: "https://boche1000acre.com/contact",
+    },
+    openGraph: {
+        title: "Contact Us & Resort Booking | boCHE 1000 Acres",
+        description: "Get in touch with boCHE 1000 Acres, a luxury nature resort in Wayanad. Contact us for bookings, stay enquiries, events, adventure activities, and resort information.",
+        url: "https://boche1000acre.com/contact",
+        siteName: "boCHE 1000 Acre",
+        images: [
+            {
+                url: "/images/gallery/banner/190/large.webp",
+                width: 1200,
+                height: 630,
+                alt: "Contact boCHE 1000 Acres Wayanad",
+            },
+        ],
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Contact Us & Resort Booking | boCHE 1000 Acres",
+        description: "Get in touch with boCHE 1000 Acres, a luxury nature resort in Wayanad. Contact us for bookings, stay enquiries, events, adventure activities, and resort information.",
+        images: ["/images/gallery/banner/190/large.webp"],
+    },
 };
 
 export default function ContactPage() {
@@ -41,6 +65,7 @@ export default function ContactPage() {
                         href="https://maps.app.goo.gl/eL9urRpNbi4rnPyw5"
                         target="_blank"
                         rel="noopener noreferrer"
+                        title="Open boCHE 1000 Acres on Google Maps for directions"
                         className="absolute top-4 right-4 z-10"
                     >
                         <Button size="sm" className="bg-blue-600 hover:bg-blue-700 text-white border gap-1.5">
@@ -81,12 +106,12 @@ export default function ContactPage() {
                             </div>
                             <p className="text-sm text-gray-500">Reception</p>
                             <p className="text-sm text-gray-700">
-                                <a href="tel:+917034048884" className="hover:underline hover:text-[#3a5a1c] transition-colors">
+                                <a href="tel:+917034048884" title="Call boCHE 1000 Acres Reception at +91 70340 48884" className="hover:underline hover:text-[#3a5a1c] transition-colors">
                                     +91 70340 48884
                                 </a>
                             </p>
                             <p className="text-sm text-gray-700">
-                                <a href="tel:+918086004747" className="hover:underline hover:text-[#3a5a1c] transition-colors">
+                                <a href="tel:+918086004747" title="Call boCHE 1000 Acres Reception at +91 80860 04747" className="hover:underline hover:text-[#3a5a1c] transition-colors">
                                     +91 80860 04747
                                 </a>
                             </p>
@@ -101,7 +126,7 @@ export default function ContactPage() {
                                 <h3 className="text-lg">Mail Id</h3>
                             </div>
                             <p className="text-sm text-gray-700">
-                                <a href="mailto:boche1000acre@gmail.com" className="hover:underline hover:text-[#3a5a1c] transition-colors">
+                                <a href="mailto:booking@bochehg.com" title="Send email enquiry to booking@bochehg.com" className="hover:underline hover:text-[#3a5a1c] transition-colors">
                                     booking@bochehg.com
                                 </a>
                             </p>

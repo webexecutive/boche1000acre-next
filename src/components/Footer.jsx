@@ -42,6 +42,7 @@ export default function Footer() {
                                     <li key={link.path}>
                                         <Link
                                             href={link.path}
+                                            title={`Explore ${link.name}`}
                                             className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                                         >
                                             {link.name}
@@ -51,6 +52,7 @@ export default function Footer() {
                                 <li>
                                     <Link
                                         href="/blog"
+                                        title="Read boCHE 1000 Acres Travel & Nature Blog"
                                         className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                                     >
                                         Blog
@@ -62,6 +64,7 @@ export default function Footer() {
                                     <li key={link.path}>
                                         <Link
                                             href={link.path}
+                                            title={`Explore ${link.name}`}
                                             className="text-gray-400 hover:text-white transition-colors duration-200 text-sm"
                                         >
                                             {link.name}
@@ -79,6 +82,7 @@ export default function Footer() {
                         {mail.length > 0 && (
                             <a
                                 href={`mailto:${mail[mail.length - 1].mailId}`}
+                                title={`Send email to ${mail[mail.length - 1].mailId}`}
                                 className="text-gray-300 hover:text-white text-sm transition-colors duration-200"
                             >
                                 Mail us: {mail[mail.length - 1].mailId}
@@ -98,6 +102,7 @@ export default function Footer() {
                             <a
                                 key={c.name}
                                 href={`tel:+91${c.phone}`}
+                                title={`Call boCHE 1000 Acres at +91 ${c.phone}`}
                                 className="text-gray-300 hover:text-white text-sm transition-colors duration-200"
                             >
                                 +91 {c.phone}
@@ -133,17 +138,19 @@ export default function Footer() {
 
                         <div className="flex gap-4">
                             <Link
-                                href="/terms"
+                                href="/terms-conditions"
+                                title="View Terms and Conditions"
                                 className="hover:text-white transition-colors duration-200"
                             >
                                 Terms and Conditions
                             </Link>
 
                             <Link
-                                href="/privacy"
+                                href="/privacy-policy"
+                                title="View Privacy Policy"
                                 className="hover:text-white transition-colors duration-200"
                             >
-                                Privacy and Policy
+                                Privacy Policy
                             </Link>
                         </div>
                     </div>
@@ -155,6 +162,7 @@ export default function Footer() {
                                 href={s.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                title={`Follow boCHE 1000 Acres on ${s.platform}`}
                                 aria-label={s.platform}
                                 className="w-8 h-8 rounded-full flex items-center justify-center hover:bg-white/10 transition-all duration-200"
                             >

@@ -21,6 +21,7 @@ const EventCard = ({ event }) => {
     return (
         <Link 
             href={`/events/${event.slug}`} 
+            title={`Read details for event ${event?.title}`}
             className="flex flex-col gap-3 w-full max-w-[320px] group cursor-pointer"
         >
             <div className="overflow-hidden rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300">
