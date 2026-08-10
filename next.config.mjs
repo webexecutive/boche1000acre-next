@@ -7,6 +7,11 @@ const __dirname = path.dirname(__filename);
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   outputFileTracingRoot: path.resolve(__dirname),
+  staticPageGenerationTimeout: 180,
+  experimental: {
+    workerThreads: false,
+    cpus: 2,
+  },
 };
 
 export default nextConfig;
