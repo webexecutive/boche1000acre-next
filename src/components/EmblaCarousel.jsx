@@ -6,9 +6,12 @@ import "@/styles/embla-carousel.css";
 import { WheelGesturesPlugin } from "embla-carousel-wheel-gestures";
 
 function EmblaCarousel({ children, sectionTitle, sectionSubtitle, className = '' }) {
+    const plugins = typeof window !== 'undefined'
+        ? [WheelGesturesPlugin({ forceWheelAxis: "x" })]
+        : [];
     const [emblaRef, emblaApi] = useEmblaCarousel(
         { align: "start" },
-        [WheelGesturesPlugin({ forceWheelAxis: "x" })]
+        plugins
     );
     const [selectedIndex, setSelectedIndex] = useState(0);
     const [scrollSnaps, setScrollSnaps] = useState([]);

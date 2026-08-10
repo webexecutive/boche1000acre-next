@@ -110,9 +110,12 @@ const NextButton = (props) => {
 }
 
 const LogoCarousel = ({ items = [], options }) => {
+  const plugins = typeof window !== 'undefined'
+    ? [AutoScroll({ speed: 1, stopOnInteraction: false })]
+    : []
   const [emblaRef, emblaApi] = useEmblaCarousel(
     { loop: true, ...options },
-    [AutoScroll({ speed: 1, stopOnInteraction: false })]
+    plugins
   )
 
   const { prevBtnDisabled, nextBtnDisabled, onPrevButtonClick, onNextButtonClick } =

@@ -257,7 +257,8 @@ export default function EventDetailsClient({ event }) {
                                     {/* eslint-disable-next-line @next/next/no-img-element */}
                                     <img
                                         src={item.variants.blur}
-                                        alt=""
+                                        alt={item.alt || 'Gallery image'}
+                                        title={item.title || item.alt || 'Gallery image'}
                                         aria-hidden="true"
                                         className="w-full h-auto object-cover"
                                     />
@@ -266,6 +267,7 @@ export default function EventDetailsClient({ event }) {
                                     <img
                                         src={item.variants.small}
                                         alt={item.alt || 'Gallery image'}
+                                        title={item.title || item.alt || 'Gallery image'}
                                         loading="lazy"
                                         onLoad={(e) => {
                                             const img = e.currentTarget;
