@@ -1,7 +1,7 @@
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from "react-icons/fa";
 import { MdDirections } from "react-icons/md";
 import Button from "../../components/Button";
-import ContactForm from "./ContactForm";
+import ContactFormClient from "./ContactFormClient";
 
 export const metadata = {
     title: "Contact & Resort Booking in Wayanad",
@@ -137,7 +137,7 @@ export default function ContactPage() {
                 {/* Form (client-side interactivity) */}
                 <div className="mt-16">
                     <h4 className="mb-6">Write to Us</h4>
-                    <ContactForm />
+                    <ContactFormClient />
                 </div>
 
             </div>

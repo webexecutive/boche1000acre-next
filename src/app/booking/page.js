@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Button from "@/components/Button";
-import BookingForm from "./BookingForm";
+import BookingFormClient from "./BookingFormClient";
 
 export const metadata = {
     title: "Book Your Stay in Wayanad",
@@ -76,7 +76,7 @@ export default function BookingPage() {
                         Enquiry Form
                     </h1>
 
-                    <BookingForm />
+                    <BookingFormClient />
                 </div>
 
             </div>

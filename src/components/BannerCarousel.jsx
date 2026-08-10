@@ -3,15 +3,16 @@ import { Carousel } from "react-responsive-carousel";
 import banners from "../data/bannerData";
 
 function BannerCarousel() {
+  const isClient = typeof window !== 'undefined';
   return (
     <Carousel
-      autoPlay
+      autoPlay={isClient}
       infiniteLoop
       interval={3000}
       showThumbs={false}
       showStatus={false}
       onClickItem={(index) => {
-        window.location.href = banners[index].link;
+        if (isClient) window.location.href = banners[index].link;
       }}
       className="cursor-pointer"
     >
