@@ -8,10 +8,6 @@ const __dirname = path.dirname(__filename);
 const nextConfig = {
   outputFileTracingRoot: path.resolve(__dirname),
   staticPageGenerationTimeout: 180,
-  experimental: {
-    workerThreads: false,
-    cpus: 2,
-  },
 };
 
 export default nextConfig;
