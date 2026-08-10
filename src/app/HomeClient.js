@@ -144,9 +144,15 @@ function HomeClient() {
     const [animationVideoReady, setAnimationVideoReady] = useState(false);
     const estateBgId = getEstateBgId(viewportWidth);
     const estateBgImage = getImageById(estateBgId);
-    const [isSlowConnection] = useState(checkIsSlowConnection);
+    const [isSlowConnection, setIsSlowConnection] = useState(false);
     const slowConnBannerId = getSlowConnectionBannerId(viewportWidth);
     const slowConnBannerImage = getImageById(slowConnBannerId);
+
+    useEffect(() => {
+        if (checkIsSlowConnection()) {
+            setIsSlowConnection(true);
+        }
+    }, []);
 
 
 
