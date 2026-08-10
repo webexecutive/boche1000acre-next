@@ -1,6 +1,5 @@
 'use client';
 
-import Hls from "hls.js";
 import { useEffect, useRef, useState } from "react";
 
 export default function VideoPlayer({
@@ -21,20 +20,25 @@ export default function VideoPlayer({
 
   useEffect(() => {
     const video = videoRef.current;
+    if (!video) return;
 
     if (type === "hls") {
-      if (Hls.isSupported()) {
-        const hls = new Hls({
-          maxBufferLength: 10,
-        });
+      let hlsInstance = null;
 
-        hls.loadSource(src);
-        hls.attachMedia(video);
+      import("hls.js").then(({ default: Hls }) => {
+        if (Hls.isSupported()) {
+          const hls = new Hls({ maxBufferLength: 10 });
+          hlsInstance = hls;
+          hls.loadSource(src);
+          hls.attachMedia(video);
+        } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
+          video.src = src;
+        }
+      });
 
-        return () => hls.destroy();
-      } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
-        video.src = src;
-      }
+      return () => {
+        if (hlsInstance) hlsInstance.destroy();
+      };
     } else {
       video.src = src;
     }
