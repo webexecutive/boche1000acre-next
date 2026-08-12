@@ -89,7 +89,8 @@ export default function BookingForm() {
         setIsSubmitting(true);
         setSubmitError("");
         try {
-            const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL || "http://localhost:5000";
+            const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL;
+            const targetUrl = serverUrl ? `${serverUrl}/submit` : "/api/submit";
             const payload = {
                 ...data,
                 dateRange: {
@@ -100,7 +101,7 @@ export default function BookingForm() {
             delete payload.checkin;
             delete payload.checkout;
 
-            const response = await axios.post(`${serverUrl}/submit`, payload);
+            const response = await axios.post(targetUrl, payload);
             if (response.data.success) {
                 setShowModal(true);
             } else {
