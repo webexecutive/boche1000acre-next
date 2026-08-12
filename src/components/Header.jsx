@@ -78,8 +78,8 @@ function Header() {
                 <div className="flex items-center space-x-10">
                     {!isBookingPage && (
                         isTransparent
-                            ? <Link href="/booking" title="Book your stay at boCHE 1000 Acres"><Button variant="glass" size="sm" className="hidden md:flex">Book Now</Button></Link>
-                            : <Link href="/booking" title="Book your stay at boCHE 1000 Acres"><Button size="sm" className="hidden md:flex">Book Now</Button></Link>
+                            ? <Link href="/booking" title="Book your stay at boCHE 1000 Acres" className="hidden md:flex"><Button variant="glass" size="sm">Book Now</Button></Link>
+                            : <Link href="/booking" title="Book your stay at boCHE 1000 Acres" className="hidden md:flex"><Button size="sm">Book Now</Button></Link>
                     )}
 
                     {/* Hamburger */}
@@ -174,7 +174,14 @@ function Header() {
                         ))}
                     </nav>
 
-
+                    {/* CTA buttons */}
+                    {!isBookingPage && (
+                        <div className="px-6 py-6 border-t border-gray-300 flex flex-col gap-3">
+                            <Link href="/booking" title="Book your stay at boCHE 1000 Acres" className="w-full flex" onClick={() => setMenuOpen(false)}>
+                                <Button fullWidth>Book Now</Button>
+                            </Link>
+                        </div>
+                    )}
 
                 </div>
             )}
