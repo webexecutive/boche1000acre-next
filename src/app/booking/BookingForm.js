@@ -89,8 +89,7 @@ export default function BookingForm() {
         setIsSubmitting(true);
         setSubmitError("");
         try {
-            const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL;
-            const targetUrl = serverUrl ? `${serverUrl}/submit` : "/api/submit";
+            const targetUrl = "/api/submit";
             const payload = {
                 ...data,
                 dateRange: {

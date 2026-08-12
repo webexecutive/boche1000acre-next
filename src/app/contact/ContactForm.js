@@ -21,8 +21,7 @@ export default function ContactForm() {
         setStatus("idle");
         setErrorMsg("");
         try {
-            const serverUrl = process.env.NEXT_PUBLIC_SERVER_URL;
-            const targetUrl = serverUrl ? `${serverUrl}/contact` : "/api/contact";
+            const targetUrl = "/api/contact";
             await axios.post(targetUrl, data);
             setStatus("success");
             reset();
