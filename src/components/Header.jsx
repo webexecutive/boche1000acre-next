@@ -174,14 +174,7 @@ function Header() {
                         ))}
                     </nav>
 
-                    {/* CTA buttons */}
-                    {!isBookingPage && (
-                        <div className="px-6 py-6 border-t border-gray-300 flex flex-col gap-3">
-                            <Link href="/booking" title="Book your stay at boCHE 1000 Acres" className="w-full flex" onClick={() => setMenuOpen(false)}>
-                                <Button fullWidth>Book Now</Button>
-                            </Link>
-                        </div>
-                    )}
+
 
                 </div>
             )}
