@@ -133,7 +133,15 @@ export default function Footer() {
                     {/* Copyright + legal */}
                     <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6 text-gray-500 text-xs text-center sm:text-left">
                         <span>
-                            Copyright © {new Date().getFullYear()} Boche 1000 Acre. All Rights Reserved
+                            Copyright © {new Date().getFullYear()} Boche 1000 Acre. All Rights Reserved. Powered by{" "}
+                            <a
+                                href="https://ciinfos.com/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hover:text-white transition-colors duration-200"
+                            >
+                                CIINFOS
+                            </a>
                         </span>
 
                         <div className="flex gap-4">
